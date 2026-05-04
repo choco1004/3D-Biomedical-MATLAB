@@ -30,10 +30,10 @@ grid on;
 % 2. 3D Drug Diffusion Model
 % ==========================
 
-depth = linspace(0, 10, 50);   % 조직 깊이
+depth = linspace(0, 10, 50);   % Tissue depth 
 [T, Dp] = meshgrid(t, depth);
 
-% 농도 모델 (시간 감소 + 깊이 감쇠)
+% Molarity Model (Time Decrease + Dep Damping)
 C3D = (D/V) .* exp(-k .* T) .* exp(-0.1 .* Dp);
 
 figure;
